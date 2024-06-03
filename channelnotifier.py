@@ -23,7 +23,7 @@ def send_message(x, admin=False):
     else:
         print("Sending message...")
         img, text = get_post(x[0], x[1])
-        bot.send_photo("Anime_Dex", img, text)
+        bot.send_photo("AiringAnime_Alerts", img, text)
 
 
 def get_json(url):
