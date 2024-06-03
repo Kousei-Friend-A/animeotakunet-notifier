@@ -1,12 +1,15 @@
-FROM python:3.8
+FROM python:3.10-slim-buster
 
-WORKDIR /notify
-COPY requirements.txt /notify/
+WORKDIR /usr/src/app
+RUN chmod 777 /usr/src/app
 
-RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install git wget pv jq python3-dev mediainfo gcc aria2 libsm6 libxext6 libfontconfig1 libxrender1 libgl1-mesa-glx -y
 
-RUN pip3 install -r requirements.txt
+COPY --from=mwader/static-ffmpeg:6.0 /ffmpeg /bin/ffmpeg
+COPY --from=mwader/static-ffmpeg:6.0 /ffprobe /bin/ffprobe
 
-COPY . /notify/
+COPY . .
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 CMD python3 channelnotifier.py
