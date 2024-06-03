@@ -78,7 +78,7 @@ def convertToScreenshot(url):
     return "./ss.jpg"
 
 
-def get_screenshot(id, ep):
+def screenshot(id, ep):
     url = f"https://api.peaceful-wolf.workers.dev/episode/{id}-episode-{ep}"
     data = get_json(url)
     url = data["results"]["stream"]["sources"][0]["file"]
