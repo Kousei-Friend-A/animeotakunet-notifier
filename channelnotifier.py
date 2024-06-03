@@ -8,8 +8,8 @@ print("Starting Bot")
 
 bot = Client(
     "bot",
-    12324,
-    "aglds;gdls",
+    27332239,
+    "2fed2c90672125f4c6f42316eed6a837",
     bot_token="7246024051:AAH5BVbCDlUQCysDLqcvbtVrK41ju03Rgco",
 )
 bot.start()
