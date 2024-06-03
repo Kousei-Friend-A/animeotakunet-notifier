@@ -10,7 +10,7 @@ bot = Client(
     "bot",
     12324,
     "aglds;gdls",
-    bot_token="43535:kgjdskagj",
+    bot_token="7246024051:AAH5BVbCDlUQCysDLqcvbtVrK41ju03Rgco",
 )
 bot.start()
 
@@ -19,7 +19,7 @@ print("Bot started")
 
 def send_message(x, admin=False):
     if admin:
-        bot.send_message("TechShreyash", x, disable_web_page_preview=True)
+        bot.send_message("Hashcatz", x, disable_web_page_preview=True)
     else:
         print("Sending message...")
         img, text = get_post(x[0], x[1])
